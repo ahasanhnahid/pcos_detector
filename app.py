@@ -1,15 +1,27 @@
-from flask import Flask, render_template, request
 import os
+import gdown
+import tensorflow as tf
+from flask import Flask, render_template, request
 import numpy as np
 from PIL import Image
-import tensorflow as tf
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+# Google Drive file ID
+google_drive_url = 'https://drive.google.com/uc?export=download&id=1dL0tAr6gJiMsoSqA6Wt5NoMxbyyfxkj6'
+model_path = 'model/pcos_model.tflite'
+
+# Check if model is already downloaded, if not download from Google Drive
+if not os.path.exists(model_path):
+    print("🔽 Downloading model from Google Drive...")
+    gdown.download(google_drive_url, model_path, quiet=False)
+else:
+    print("✅ Model already downloaded.")
+
 # Load TFLite model
-interpreter = tf.lite.Interpreter(model_path="model/pcos_model.tflite")
+interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
