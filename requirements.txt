@@ -4,3 +4,6 @@ tensorflow
 pillow
 numpy
 gunicorn
+Jinja2
+MarkupSafe
+itsdangerous

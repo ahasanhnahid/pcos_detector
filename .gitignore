@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-# Distribution / packaging
+# Distribution and packaging
 .Python
 build/
 develop-eggs/
@@ -29,8 +29,6 @@ instance/
 .webassets-cache
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -88,3 +86,20 @@ Thumbs.db
 
 # Node.js dependencies
 node_modules/
+
+# Model files (large files)
+model/*.h5
+model/*.tflite
+
+# Log files
+*.log
+*.out
+*.err
+
+# Temporary files
+*.tmp
+
+# Docker related files (if used)
+.docker
+docker-compose.yml
+Dockerfile
