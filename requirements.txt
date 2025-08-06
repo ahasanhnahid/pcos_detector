@@ -1,6 +1,6 @@
-flask>=2.0.0       # Flask web framework, update to the latest stable version
-flask-cors>=3.1.1  # CORS support for Flask
-tensorflow>=2.11   # TensorFlow, should match your model's TensorFlow version (TFLite needs TensorFlow >=2.0)
-pillow>=9.0.0      # Pillow for image processing
-numpy>=1.21.0      # NumPy for numerical operations
-gunicorn>=20.0.0   # WSGI server for Heroku
+flask==3.1.1
+flask-cors==6.0.1
+tensorflow==2.11.0  # Ensure the version is a stable release, like 2.11.0
+pillow==11.3.0
+numpy==2.3.2
+gunicorn==23.0.0
